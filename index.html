@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Printer</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="main-container">
+    <h1>Printer</h1>
+</header>
+
+<main class="main-container">
+    <!--FORM-->
+    <section id="section-form">
+        <form action="#" method="POST">
+            <h2>Printez</h2>
+            <div class="post-send-form-container">
+                <div>
+                    <label for="form-input-username"> Nom :
+                        <input class="post-send-form-input" id="form-input-username" maxlength="16" name="name"
+                               placeholder="Max 16 caractères" type="text">
+                    </label>
+                    <label for="form-input-message"> Message :
+                        <textarea class="post-send-form-input" id="form-input-message" maxlength="256"
+                                  name="message" placeholder="Max 255 caractères"></textarea>
+                    </label>
+                </div>
+                <button aria-label="Envoyer le post" class="post-send-form-submit" title="Envoyer" type="submit"><img
+                        src="assets/img/print_black.svg"></button>
+            </div>
+        </form>
+        <p class="form-status"></p>
+        <hr>
+    </section>
+
+    <!--POSTS and TRENDS-->
+    <section>
+        <div class="before-posts">
+            <h2>Tendances</h2>
+
+            <p class="loadingText" id="loadingTextTrends">Chargement des tendances...</p>
+
+            <div class="trends-container">
+                <template class="trend-template">
+                    <p class="trend">test</p>
+                </template>
+            </div>
+
+            <h2>Prints</h2>
+        </div>
+        <p class="loadingText" id="loadingTextPosts">Chargement des prints...</p>
+
+        <div class="posts-container">
+
+            <template id="post-template">
+                <article class="post">
+                    <div class="post-text-container">
+                        <p class="post-content">Contenu du post</p>
+                        <h3 class="post-info-container">
+                            <span class="post-author">Auteur du post</span>
+                            <time class="post-date" datetime="2022-02-14 10:17:30">Date du post</time>
+                        </h3>
+                    </div>
+                    <div class="post-social-container">
+                        <img class="post-avatar" src="assets/img/icon-avatar.svg">
+                        <div class="post-buttons-container">
+                            <div class="post-button-group">
+                                <button aria-label="Ajouter un like" class="post-button post-button-like">
+                                    <img class="post-button-icon post-button-icon-like" src="assets/img/heart.svg">
+                                </button>
+                                <span class="post-like-count">Nb</span>
+                            </div>
+                            <div class="post-button-group">
+                                <button aria-label="Voir les commentaires" class="post-button post-button-comment">
+                                    <img class="post-button-icon post-button-icon-comment"
+                                         src="assets/img/chat-left.svg">
+                                </button>
+                                <span class="post-comment-count">Nb</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </template>
+
+        </div>
+
+    </section>
+</main>
+<script src="js/API_URL.js" type="module"></script>
+<script src="js/api.js" type="module"></script>
+<script src="js/helpers.js" type="module"></script>
+<script src="js/script.js" type="module"></script>
+</body>
+</html>

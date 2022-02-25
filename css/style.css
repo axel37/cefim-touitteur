@@ -1,0 +1,265 @@
+@import "reset.css";
+
+:root {
+    --border-radius: 0.25rem;
+    font-family: monospace;
+    font-size: clamp(0.8125rem, 2vw, 1.1875rem);
+}
+
+header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+
+    background-color: white;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+.main-container {
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-container section {
+    /*margin-bottom: 2rem;*/
+}
+
+#section-form {
+    position: sticky;
+    top: 0;
+
+    background-color: white;
+
+    z-index: 5;
+}
+
+#section-form h2 {
+    display: none;
+}
+
+#section-form hr {
+    border-style: solid;
+    border-color: black;
+
+    border-radius: 1rem 1rem 0 0;
+
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+
+    margin-bottom: 0;
+}
+
+.post-send-form-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 1rem;
+}
+
+
+.post-send-form-input {
+    width: 100%;
+    border-radius: var(--border-radius);
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.post-send-form-container textarea {
+    resize: vertical;
+}
+
+.post-send-form-container input[type="submit"] {
+    border-radius: var(--border-radius);
+    border-style: solid;
+    border-color: grey;
+
+    background-color: lightgrey;
+
+    transition: 0.15s;
+}
+.post-send-form-container input[type="submit"]:hover {
+    background-color: #e3e3e3;
+    border-color: lightgrey;
+}
+.post-send-form-container input[type="submit"]:focus {
+    background-color: white;
+}
+
+.post-send-form-submit {
+    text-align: center;
+}
+
+.post-send-form-submit img {
+    display: inline;
+    /*width: 2rem;
+    height: 2rem;*/
+}
+
+.before-posts {
+    background-color: white;
+}
+
+.posts-container {
+    display : flex; /* Flex pour utiliser flex-direction */
+    flex-direction: column-reverse; /* Du plus récent au plus ancien */
+    gap: 2rem;
+}
+
+.loadingText {
+    text-align: center;
+    color: lightgray;
+}
+
+.post {
+    display: grid;
+    /*grid-template-columns: 1fr auto;*/
+    gap: 1rem;
+
+    border : 1px solid black;
+    border-radius: var(--border-radius);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    transition: 1s;
+
+    background-color: white;
+
+    transform-origin: top;
+
+    animation: slideIn 1500ms;
+}
+
+.post-content {
+
+    margin-bottom: 0.5rem;
+}
+
+.post-text-container {
+    word-wrap: anywhere;
+}
+
+.post-info-container {
+    font-style: normal;
+    font-weight: normal;
+
+    font-size: 0.8rem;
+}
+
+.post-author::after {
+    content: " - ";
+}
+
+.post-date {
+    font-style: italic;
+    font-size: 0.7rem;
+}
+
+.post-social-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: end;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.post-button-group {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 0.25rem;
+}
+
+.post-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.05rem;
+    width: 3rem;
+}
+
+.post-avatar {
+    filter: saturate(0%);
+    width: 4rem;
+    height: 4rem;
+}
+
+/*TODO : Buttons decrease in size when number gets larger*/
+.post-button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: unset;
+
+    cursor: pointer;
+
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.post-button:hover {
+    filter: invert(50%);
+}
+
+.post-button-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.post-button-icon:hover {
+
+}
+
+.post-button-icon-like {
+
+}
+.post-button-icon-comment {
+
+}
+
+.trends-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+
+    margin-bottom: 1rem;
+}
+
+.trend {
+    padding: 0.125rem;
+    cursor: pointer;
+}
+.trend::before {
+    font-weight: bold;
+    content : "#";
+}
+
+@keyframes slideIn {
+    0%
+    {
+        z-index: 1;
+        /*opacity: 0;*/
+        transform: translateY(-120%) scaleY(0);
+    }
+    50%
+    {
+        transform: translateY(-100%)  scaleY(1);
+    }
+    100%
+    {
+        z-index: 0;
+        /*opacity: 1;*/
+        transform: translateY(0%);
+    }
+}
